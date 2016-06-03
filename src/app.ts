@@ -1,12 +1,12 @@
 import {Component} from 'angular2/core';
 import {bootstrap} from 'angular2/platform/browser';
 
-import {ActivityRunning} from './activities/running';
+import {ActivityVtt} from './activities/vtt';
 
 @Component({
     selector: 'sport-tracker-app',
-    template: `<activity-running></activity-running>`,
-    directives: [ActivityRunning]
+    template: `<activity-vtt></activity-vtt>`,
+    directives: [ActivityVtt]
 })
 class SportTrackerApp {
 }

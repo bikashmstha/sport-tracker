@@ -1,5 +1,5 @@
 {
-  "version": "1.6.2",
+  "version": "1.8.7",
   "compilerOptions": {
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -9,7 +9,7 @@
     "removeComments": true,
     "sourceMap": false
   },
-  "exclude": [
-    "node_modules"
+  "files": [
+    "node_modules/angular2/typings/browser.d.ts"
   ]
 }

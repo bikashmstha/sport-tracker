@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var livereload = require('gulp-livereload');
 
 var PATHS = {
     src: 'src/**/*.ts'
@@ -14,10 +15,12 @@ gulp.task('ts2js', function () {
     var tscConfig = require('./tsconfig.json');
 
     var tsResult = gulp
-        .src(PATHS.src)
+        .src([].concat(PATHS.src, tscConfig.files))
         .pipe(typescript(tscConfig.compilerOptions));
 
-    return tsResult.js.pipe(gulp.dest('dist'));
+    return tsResult.js
+        .pipe(gulp.dest('dist'))
+        .pipe(livereload());
 });
 
 gulp.task('play', ['ts2js'], function () {
@@ -34,6 +37,8 @@ gulp.task('play', ['ts2js'], function () {
     http.createServer(app).listen(port, function () {
         open('http://localhost:' + port);
     });
+
+    livereload.listen();
 });
 
 gulp.task('default', ['play']);

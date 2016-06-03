@@ -1,0 +1,23 @@
+- migrate to the latest ng2
+    - need to evaluate / decide upon a starter kit / CLI
+- connect to a "real" back-end
+
+THINGS TO LEARN:
+    - setup
+    - http/fetch + RxJS or any other reasonable data flow solution
+    - forms:
+        - validation
+        - data conversion
+        - model-driven forms
+        - encapsulating common code
+    - lists
+        - sortable / filtrable / paginable list in ng2
+        - data flow into list components
+        - fetching non trivial data and data flow (or how to connect tracks to activities list)
+
+
+THINGS TO EXPLORE / FIX:
+    - inputs of type data / input conversion
+    - factoring out common code for data fields
+    - http vs. fetch
+    - data flow: observables vs. promises vs. immutable

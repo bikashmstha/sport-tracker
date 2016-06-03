@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/platform/browser', './activities/vtt'], function(exports_1, context_1) {
+System.register(["angular2/core", './vtt/store', "./vtt/form", "./vtt/list"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,34 +10,38 @@ System.register(['angular2/core', 'angular2/platform/browser', './activities/vtt
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, browser_1, vtt_1;
-    var SportTrackerApp;
+    var core_1, store_1, form_1, list_1;
+    var ActivityVtt;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             },
-            function (browser_1_1) {
-                browser_1 = browser_1_1;
+            function (store_1_1) {
+                store_1 = store_1_1;
             },
-            function (vtt_1_1) {
-                vtt_1 = vtt_1_1;
+            function (form_1_1) {
+                form_1 = form_1_1;
+            },
+            function (list_1_1) {
+                list_1 = list_1_1;
             }],
         execute: function() {
-            SportTrackerApp = (function () {
-                function SportTrackerApp() {
+            ActivityVtt = (function () {
+                function ActivityVtt() {
                 }
-                SportTrackerApp = __decorate([
+                ActivityVtt = __decorate([
                     core_1.Component({
-                        selector: 'sport-tracker-app',
-                        template: "<activity-vtt></activity-vtt>",
-                        directives: [vtt_1.ActivityVtt]
+                        selector: 'activity-vtt',
+                        template: "\n        <activity-vtt-form></activity-vtt-form>\n        <hr>\n        <activity-vtt-list></activity-vtt-list>\n    ",
+                        directives: [form_1.ActivityVttForm, list_1.ActivityVttList],
+                        providers: [store_1.VttActivityStore, store_1.VttTracksStore]
                     }), 
                     __metadata('design:paramtypes', [])
-                ], SportTrackerApp);
-                return SportTrackerApp;
+                ], ActivityVtt);
+                return ActivityVtt;
             }());
-            browser_1.bootstrap(SportTrackerApp);
+            exports_1("ActivityVtt", ActivityVtt);
         }
     }
 });
